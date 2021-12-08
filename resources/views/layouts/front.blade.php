@@ -134,7 +134,8 @@
                             <li>
                                 <dl class="dl-horizontal-variant-1 clearfix">
                                     <dt><span class="material-icons-location_on icon icon-dark icon-xs"></span></dt>
-                                    <dd><a href="#" class="text-sbold text-base">{{$content->address}}</a></dd>
+                                    <dd><a style="  font-family: Arial, Helvetica, sans-serif;
+" href="callto:{{$content->phone}}" href="#" class="text-sbold text-base">{{$content->address}}</a></dd>
                                 </dl>
                             </li>
                             <li>
@@ -147,7 +148,8 @@
                             <li>
                                 <dl class="dl-horizontal-variant-1 clearfix">
                                     <dt><span style="font-size: 20px" class="icon icon-md icon-primary material-icons-email icon icon-dark icon-xs"></span></dt>
-                                    <dd><a href="callto:{{$content->email}}" class="text-bold text-base h6">{{$content->email}}</a></dd>
+                                    <dd><a style="  font-family: Arial, Helvetica, sans-serif;
+" href="callto:{{$content->phone}}" href="callto:{{$content->email}}" class="text-bold text-base h6">{{$content->email}}</a></dd>
                                 </dl>
                             </li>
                         </ul>
