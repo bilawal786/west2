@@ -121,7 +121,7 @@
                         <div class="rd-navbar-brand">
                             <div class="brand-name"><a href="#"><img src="{{asset($content->footer_logo)}}" alt="" style="height: 50px !important;"></a></div>
                         </div>
-                        <p class="copyright">&#169; &nbsp;<span id="copyright-year"></span>&nbsp; | &nbsp;<a href="terms.html" class="text-base">Privacy Policy</a></p>
+                        <p class="copyright">&#169; &nbsp;<span id="copyright-year"></span>&nbsp; | &nbsp;<a href="www.ikaedigital.com" class="text-base">Ikae Digital</a></p>
                     </div>
                     <div class="cell-xs-12 cell-md-3 offset-top-20 offset-md-top-7 offset-lg-top-0 cell-md-push-3 text-md-right">
                         <ul class="list-inline">
@@ -140,7 +140,8 @@
                             <li>
                                 <dl class="dl-horizontal-variant-1 clearfix">
                                     <dt><span class="material-icons-local_phone icon icon-dark icon-xs"></span></dt>
-                                    <dd><a href="callto:{{$content->phone}}" class="text-bold text-base h6">{{$content->phone}}</a></dd>
+                                    <a style="  font-family: Arial, Helvetica, sans-serif;
+" href="callto:{{$content->phone}}" class="text-bold text-base h6">{{$content->phone}}</a>
                                 </dl>
                             </li>
                             <li>
