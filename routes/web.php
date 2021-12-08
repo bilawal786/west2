@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontendController@index')->name('front.index');
+Route::get('/about', 'FrontendController@about')->name('front.about');
+Route::get('/blogs', 'FrontendController@blogs')->name('front.blogs');
 Route::get('/calender', 'FrontendController@calender')->name('front.calender');
 Route::post('/addtocart', 'FrontendController@addtocart')->name('addtocart');
 Route::get('/cartitems', 'FrontendController@cartitems')->name('cartitems');
@@ -28,8 +30,21 @@ Auth::routes();
 Route::group(['middleware' => ['auth', 'web', 'role']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::get('/general/blog', 'ContentController@blog')->name('general.blog');
+    Route::post('/blog/store', 'ContentController@blogStore')->name('blog.store');
+    Route::get('/blog/delete/{id}', 'ContentController@blogdelete')->name('blog.delete');
+
+    Route::get('/general/testimonial', 'ContentController@testimonial')->name('general.testimonial');
+    Route::post('/testimonial/store', 'ContentController@testimonialstore')->name('testimonial.store');
+
+    Route::get('/general/faq', 'ContentController@faq')->name('general.faq');
+    Route::post('/faq/store', 'ContentController@faqStore')->name('faq.store');
+
     Route::get('/general/gallery', 'ContentController@gallery')->name('general.gallery');
     Route::post('/gallery/store', 'ContentController@galleryStore')->name('gallery.store');
+
+    Route::get('/general/about', 'ContentController@about')->name('general.about');
+    Route::post('/about/store', 'ContentController@aboutstore')->name('about.store');
 
     Route::get('/general/settings', 'ContentController@settings')->name('general.settings');
     Route::post('/general/settings/store', 'ContentController@settingStore')->name('settings.store');

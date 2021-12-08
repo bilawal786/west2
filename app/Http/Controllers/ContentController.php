@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Content;
 use App\Gallery;
 use Illuminate\Http\Request;
@@ -65,6 +66,14 @@ class ContentController extends Controller
             $destinationPath = 'allimages/';
             $image3->move($destinationPath, $name3);
             $gs->simage3 = 'allimages/' . $name3;
+        }
+
+        if ($request->hasfile('banner')) {
+            $image1 = $request->file('banner');
+            $name = time() . 'allimages' . '.' . $image1->getClientOriginalExtension();
+            $destinationPath = 'allimages/';
+            $image1->move($destinationPath, $name);
+            $gs->banner = 'allimages/' . $name;
         }
         $gs->stext1 = $request->stext1;
         $gs->stext2 = $request->stext2;
@@ -144,6 +153,92 @@ class ContentController extends Controller
             $gallery->image8 = 'allimages/' . $name8;
         }
         $gallery->update();
+        $notification = array(
+            'messege' => 'Sauvegarde réussie!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function about(){
+        $gs = Content::find(1);
+        return view('admin.settings.about', compact('gs'));
+    }
+    public function faq(){
+        $gs = Content::find(1);
+        return view('admin.settings.faq', compact('gs'));
+    }
+    public function testimonial(){
+        $gs = Content::find(1);
+        return view('admin.settings.testimonial', compact('gs'));
+    }
+    public function aboutstore(Request $request){
+        $gs = Content::find(1);
+        $gs->about = $request->about;
+        $gs->update();
+        $notification = array(
+            'messege' => 'Sauvegarde réussie!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function blog(){
+        $blog = Blog::all();
+        return view('admin.settings.blog', compact('blog'));
+    }
+    public function blogStore(Request $request){
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+
+        if ($request->hasfile('photo')) {
+            $image1 = $request->file('photo');
+            $name = time() . 'allimages' . '.' . $image1->getClientOriginalExtension();
+            $destinationPath = 'allimages/';
+            $image1->move($destinationPath, $name);
+            $blog->image = 'allimages/' . $name;
+        }
+        $blog->save();
+        $notification = array(
+            'messege' => 'Sauvegarde réussie!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function blogdelete($id){
+        $blog = Blog::find($id);
+        $blog->delete();
+        $notification = array(
+            'messege' => 'Sauvegarde réussie!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function faqStore(Request $request){
+        $gs = Content::find(1);
+        $gs->q1 = $request->q1;
+        $gs->q2 = $request->q2;
+        $gs->q3 = $request->q3;
+        $gs->q4 = $request->q4;
+        $gs->a1 = $request->a1;
+        $gs->a2 = $request->a2;
+        $gs->a3 = $request->a3;
+        $gs->a4 = $request->a4;
+        $gs->update();
+        $notification = array(
+            'messege' => 'Sauvegarde réussie!',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function testimonialstore(Request $request){
+        $gs = Content::find(1);
+        $gs->review1 = $request->review1;
+        $gs->review2 = $request->review2;
+        $gs->review3 = $request->review3;
+        $gs->rg1 = $request->rg1;
+        $gs->rg2 = $request->rg2;
+        $gs->rg3 = $request->rg3;
+        $gs->update();
         $notification = array(
             'messege' => 'Sauvegarde réussie!',
             'alert-type' => 'success'

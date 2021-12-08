@@ -62,6 +62,12 @@
                                     <input type="text" class="form-control" value="{{$gs->video}}" name="video">
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <label for="email_address">Bannière</label>
+                                <div class="form-group">
+                                    <input type="file" class="form-control" value="{{$gs->banner}}" name="banner">
+                                </div>
+                            </div>
 
                         </div>
                         <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Sauvegarder</button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Content;
 use App\Gallery;
 use Illuminate\Http\Request;
@@ -24,6 +25,14 @@ class FrontendController extends Controller
     }
     public function calender(){
         return view('front.calender');
+    }
+    public function about(){
+        $gs = Content::find(1);
+        return view('front.about', compact('gs'));
+    }
+    public function blogs(){
+        $blogs = Blog::all();
+        return view('front.blogs', compact('blogs'));
     }
     public function addtocart(Request $request){
         $response = Http::get('https://westindiescare.ikaedigital.com/api/product/'.$request->product_id);

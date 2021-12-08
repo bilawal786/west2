@@ -47,31 +47,33 @@
         <!--section 1-->
         <div class="range range-no-gutter">
             <div class="cell-xs-12 cell-sm-6 cell-md-3">
-                <div class="banner-block border-right"><span class="icon icon-primary icon-sm fl-bigmug-line-like51"></span>
-                    <p class="h5 text-regular">NOS OFFRES</p>
-                </div>
+                <a href="#faq"> <div class="banner-block border-right"><span class="icon icon-primary icon-sm fl-bigmug-line-like51"></span>
+                    <p class="h5 text-regular">NOS CONSEILS</p>
+                </div></a>
             </div>
             <div class="cell-xs-12 cell-sm-6 cell-md-3">
-                <div class="banner-block border-right"><span class="icon icon-primary icon-sm fl-bigmug-line-nine16"></span>
+                <a href="{{route('front.about')}}">
+                    <div class="banner-block border-right"><span class="icon icon-primary icon-sm fl-bigmug-line-nine16"></span>
                     <p class="h5 text-regular">A PROPOS<br class="visible-md"></p>
-                </div>
+                    </div>
+                </a>
             </div>
             <div class="cell-xs-12 cell-sm-6 cell-md-3">
-                <div class="banner-block border-right"><span class="icon icon-primary icon-sm fl-bigmug-line-foggy3"></span>
-                    <p class="h5 text-regular">BOUTIQUE <br class="visible-md"></p>
-                </div>
+                <a href="#testimonial"><div class="banner-block border-right"><span class="icon icon-primary icon-sm fl-bigmug-line-foggy3"></span>
+                    <p class="h5 text-regular">Témoignages <br class="visible-md"></p>
+                </div>></a>
             </div>
             <div class="cell-xs-12 cell-sm-6 cell-md-3">
-                <div class="banner-block"><span class="icon icon-primary icon-sm fl-bigmug-line-notification4"></span>
+                <a href="{{route('front.blogs')}}"><div class="banner-block"><span class="icon icon-primary icon-sm fl-bigmug-line-notification4"></span>
                     <p class="h5 text-regular">BLOG</p>
-                </div>
+                </div></a>
             </div>
         </div>
-     <section class="section-55 section-sm-top-115 section-sm-bottom-0 text-center">
+     <section class="section-55 section-sm-top-115 section-sm-bottom-0 text-center" style="margin-bottom: 20px !important;">
          <div class="container">
              <div class="row">
                  <div class="col-md-12">
-                     <img style="width: 100%" src="{{asset('front/01.png')}}" alt="">
+                     <img style="width: 100%" src="{{asset($gs->banner)}}" alt="">
                  </div>
              </div>
          </div>
@@ -141,6 +143,84 @@
 
             </div>
 
+        </section>
+
+        <!--section faq-->
+        <section class="section-top-40 text-sm-left" id="faq">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Nos conseils</h1>
+                        <!-- Responsive-tabs-->
+                        <div data-type="accordion" class="responsive-tabs">
+                            <ul class="resp-tabs-list">
+                                <li class="h6">{{$gs->q1}}</li>
+                                <li class="h6">{{$gs->q2}}</li>
+                                <li class="h6">{{$gs->q3}}</li>
+                                <li class="h6">{{$gs->q4}}</li>
+                            </ul>
+                            <div class="resp-tabs-container">
+                                <div>{{$gs->a1}}</div>
+                                <div>{{$gs->a2}}</div>
+                                <div>{{$gs->a3}}</div>
+                                <div>{{$gs->a4}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-55 section-lg-115 text-center" id="testimonial">
+            <div class="container">
+                <div class="heading-variant-1">
+                    <h1>Témoignages</h1>
+                </div>
+                <div class="row offset-top-40">
+                    <div class="col-xs-12 col-sm-6 col-lg-4 text-sm-left">
+                        <article class="thumbnail-custom-1 max-width-370">
+                            <div class="caption-mod-2">
+                                <blockquote class="quote-1">
+                                    <p>
+                                        <q>{{$gs->review1}}</q>
+                                    </p>
+                                    <p>
+                                        <cite>{{$gs->rg1}}</cite>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-4 text-sm-left offset-top-40 offset-sm-top-0">
+                        <article class="thumbnail-custom-1 max-width-370">
+                            <div class="caption-mod-2">
+                                <blockquote class="quote-1">
+                                    <p>
+                                        <q>{{$gs->review2}}</q>
+                                    </p>
+                                    <p>
+                                        <cite>{{$gs->rg2}}</cite>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-lg-4 text-sm-left offset-top-40 offset-lg-top-0">
+                        <article class="thumbnail-custom-1 max-width-370">
+                            <div class="caption-mod-2">
+                                <blockquote class="quote-1">
+                                    <p>
+                                        <q>{{$gs->review3}}</q>
+                                    </p>
+                                    <p>
+                                        <cite>{{$gs->rg3}}</cite>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </section>
 
 @endsection

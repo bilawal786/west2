@@ -36,10 +36,31 @@ class CreateContentsTable extends Migration
             $table->string('stext2')->nullable();
             $table->string('stext3')->nullable();
 
+            $table->string('banner')->nullable();
+
 
             $table->string('video')->nullable();
             $table->longText('about')->nullable();
             $table->longText('aboutimage')->nullable();
+
+            $table->longText('review1')->nullable();
+            $table->longText('review2')->nullable();
+            $table->longText('review3')->nullable();
+
+            $table->longText('rg1')->nullable();
+            $table->longText('rg2')->nullable();
+            $table->longText('rg3')->nullable();
+
+            $table->longText('q1')->nullable();
+            $table->longText('q2')->nullable();
+            $table->longText('q3')->nullable();
+            $table->longText('q4')->nullable();
+
+            $table->longText('a1')->nullable();
+            $table->longText('a2')->nullable();
+            $table->longText('a3')->nullable();
+            $table->longText('a4')->nullable();
+
 
             $table->timestamps();
         });

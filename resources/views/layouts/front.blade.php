@@ -65,7 +65,7 @@
                                     </li>
                                     <li><a href="{{route('front.index')}}#products">Nos produits</a>
                                     </li>
-                                    <li><a href="{{route('front.index')}}#instagram" onclick="return false">Instagram Feed</a>
+                                    <li><a href="{{route('front.index')}}#instagram" onclick="return false">Galerie</a>
                                     </li>
                                     <li><a href="">Contact</a></li>
                                     @guest
