@@ -74,7 +74,7 @@
 
         <li><a href="javascript:void(0);" class="fullscreen" data-provide="fullscreen"><i class="zmdi zmdi-fullscreen"></i></a></li>
         <li class="power">
-            <a href="javascript:void(0);" class="js-right-sidebar"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
+            <a href="{{route('profile')}}" class="js-right-sidebar"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
             <a href="{{route('logout')}}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                class="mega-menu">
@@ -150,7 +150,7 @@
             </div>
         </div>
 
-    @yield('content')
+        @yield('content')
 
     </div>
 </section>
@@ -183,7 +183,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-        @if(Session::has('messege'))
+    @if(Session::has('messege'))
     var type="{{Session::get('alert-type','info')}}"
     switch(type){
         case 'info':

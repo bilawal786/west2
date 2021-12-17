@@ -29,6 +29,7 @@ Auth::routes();
 //Admin routes
 Route::group(['middleware' => ['auth', 'web', 'role']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile', 'HomeController@profile')->name('profile');
 
     Route::get('/general/blog', 'ContentController@blog')->name('general.blog');
     Route::post('/blog/store', 'ContentController@blogStore')->name('blog.store');

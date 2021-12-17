@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -17,6 +18,7 @@ class StudentController extends Controller
         $user = User::where('id', $id->id)->first();
         $user->fname = $request->fname;
         $user->lname = $request->lname;
+        $user->email = $request->email;
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->country = $request->country;
